@@ -13,14 +13,14 @@ namespace NotebookCloud.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Security()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your application security page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult FreeTrial()
         {
             ViewBag.Message = "Your contact page.";
 
