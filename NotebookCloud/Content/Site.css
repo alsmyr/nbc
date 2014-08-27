@@ -10,3 +10,8 @@
 .featurette-image {
     width: 100%;
 }
+
+.jumbotron {
+    background-color: #0789CF;
+    color: white;
+}
