@@ -15,7 +15,6 @@
 <body>
     <div class="navbar-wrapper">
         <div class="container">
-
             <div class="navbar navbar-default navbar-static-top" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
@@ -29,9 +28,9 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="/">Home</a></li>
-                            <li><a href="/Home/Security">Security</a></li>
-                            <li><a href="/Home/FreeTrial">Free Trial</a></li>
+                            <li class="@(ViewContext.RouteData.Values["Action"] == "Index" ? "active" : "")"><a href="/">Home</a></li>
+                            <li class="@(ViewContext.RouteData.Values["Action"].ToString().Equals("Security") ? "active" : "")"><a href="/Home/Security">Security</a></li>
+                            <li class="@(ViewContext.RouteData.Values["Action"].ToString().Equals("FreeTrial") ? "active" : "")"><a href="/Home/FreeTrial">Free Trial</a></li>
                             
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
