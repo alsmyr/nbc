@@ -127,6 +127,7 @@
     <Content Include="Content\Images\biovia-logo-transparent.png" />
     <Content Include="Content\Images\cloud.png" />
     <Content Include="Content\Images\padlock.png" />
+    <Content Include="Content\Images\sciencecloud.png" />
     <Content Include="Content\Images\screenshot.png" />
     <Content Include="Content\Images\team.png" />
     <Content Include="favicon.ico" />
