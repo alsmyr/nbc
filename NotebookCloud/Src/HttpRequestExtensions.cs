@@ -57,7 +57,7 @@ namespace NotebookCloud.Src
 
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return false;
             }
