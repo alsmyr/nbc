@@ -16,11 +16,7 @@ namespace NotebookCloud.Src
         public static bool IsFromEU(this HttpRequestBase request)
         {
             try
-            {
-                var ip = request.GetIp();
-
-                var country = Reader.Country(ip.ToString());
-
+            {   
                 switch (request.GetCountry())
                 {
                     case "Austria":
@@ -57,7 +53,7 @@ namespace NotebookCloud.Src
 
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -72,9 +68,7 @@ namespace NotebookCloud.Src
         {
             try
             {
-                var ip = request.GetIp();
-
-                var country = Reader.Country(ip.ToString());
+                var country = Reader.Country(request.UserHostAddress);
 
                 return country.Country.Name;
 
@@ -83,38 +77,6 @@ namespace NotebookCloud.Src
             {
                 return request.UserHostAddress;
             }
-        }
-
-        /// <summary>
-        /// Gets the IP address of the request.
-        /// This method is more useful than built in because in 
-        /// some cases it may show real user IP address even under proxy.
-        /// The <see cref="System.Net.IPAddress.None" /> value 
-        /// will be returned if getting is failed.
-        /// </summary>
-        /// <param name="request">The HTTP request object.</param>
-        /// <returns>IPAddress object</returns>
-        public static IPAddress GetIp(this HttpRequestBase request)
-        {
-            string ipString;
-            if (string.IsNullOrEmpty(request.ServerVariables["HTTP_X_FORWARDED_FOR"]))
-            {
-                ipString = request.ServerVariables["REMOTE_ADDR"];
-            }
-            else
-            {
-                ipString = request.ServerVariables["HTTP_X_FORWARDED_FOR"]
-                   .Split(",".ToCharArray(),
-                   StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
-            }
-
-            IPAddress result;
-            if (!IPAddress.TryParse(ipString, out result))
-            {
-                result = IPAddress.None;
-            }
-
-            return result;
         }
     }
 }
