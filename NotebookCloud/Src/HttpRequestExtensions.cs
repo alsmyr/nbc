@@ -81,7 +81,7 @@ namespace NotebookCloud.Src
             }
             catch (Exception)
             {
-                return "(unknown)";
+                return request.UserHostAddress;
             }
         }
 
