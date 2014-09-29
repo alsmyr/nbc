@@ -29,6 +29,23 @@ color: white;
     background-color: #5b9bd7;
 }
 
+@media(max-width:400px) {
+    .pricingtable {
+        font-size: 9px;
+}
+    .pricingcell {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .popular .pricingcell{
+    background-color: #2E75B6;
+    border-bottom: 1px solid   #5B9BD7;
+}
+}
+
+
+
 .popular .pricingcell{
     background-color: #2E75B6;
     border-bottom: 1px solid   #5B9BD7;
@@ -37,9 +54,6 @@ color: white;
 .popular {
     background-color: #2E75B6;
 }
-
-
-
 
 .border-end {
     border-top: 1px solid  #2E75B6;
