@@ -29,6 +29,18 @@ color: white;
     background-color: #5b9bd7;
 }
 
+
+@media(min-width:400px) {
+
+    .desktop-only {
+        display:block !important;
+    }
+
+    .mobile-only {
+        display:none !important;
+    }
+}
+
 @media(max-width:400px) {
     .pricingtable {
         font-size: 9px;
@@ -36,6 +48,18 @@ color: white;
     .pricingcell {
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .mobile-only {
+        display:block !important;
+    }
+ 
+    .desktop-only {
+        display:none !important;
+    }
+
+    h1 {
+        font-size: 24px;
     }
 
     .popular .pricingcell{
