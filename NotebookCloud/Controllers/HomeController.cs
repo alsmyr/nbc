@@ -37,8 +37,8 @@ namespace NotebookCloud.Controllers
             }
 
             ViewBag.Country = Request.GetCountry();
-            
-            return View();
+
+            return Redirect("http://www.biovianotebook.com");
         }
 
         public ActionResult Security()
